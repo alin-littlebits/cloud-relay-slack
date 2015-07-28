@@ -19,6 +19,15 @@
 			"Rev": "40e4aedc8fabf8c23e040057540867186712faa5"
 		},
 		{
+			"ImportPath": "github.com/russross/blackfriday",
+			"Comment": "v1.2-80-g8cec3a8",
+			"Rev": "8cec3a854e68dba10faabbe31c089abf4a3e57a6"
+		},
+		{
+			"ImportPath": "github.com/shurcooL/sanitized_anchor_name",
+			"Rev": "11a20b799bf22a02808c862eb6ca09f7fb38f84a"
+		},
+		{
 			"ImportPath": "golang.org/x/net/context",
 			"Rev": "d9558e5c97f85372afee28cf2b6059d7d3818919"
 		},
