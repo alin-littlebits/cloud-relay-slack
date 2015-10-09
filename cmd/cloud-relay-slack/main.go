@@ -7,11 +7,16 @@ import (
 	//"encoding/json"
 )
 
-hc := http.Client{}
-client_req, client_err := http.NewRequest("POST", "https://api-http.littlebitscloud.cc/devices/243c200ccecb/output?access_token=97612f7c1ce1b4bd1e2c317bad9f1c4af67e6fb6267931c0", nil)
+var hc  := http.Client{}
+var client_req
+var client_err 
 
 func main() {
     http.HandleFunc("/", hello)
+
+    hc = http.Client{}
+    client_req, client_err =  http.NewRequest("POST", "https://api-http.littlebitscloud.cc/devices/243c200ccecb/output?access_token=97612f7c1ce1b4bd1e2c317bad9f1c4af67e6fb6267931c0", nil)
+
     fmt.Println("listening...")
     err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
     if err != nil {
