@@ -7,9 +7,9 @@ import (
 	//"encoding/json"
 )
 
-var hc  := http.Client{}
+var hc
 var client_req
-var client_err 
+var client_err
 
 func main() {
     http.HandleFunc("/", hello)
