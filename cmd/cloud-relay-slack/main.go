@@ -25,8 +25,8 @@ func main() {
 }
 
 func hello(res http.ResponseWriter, req *http.Request) {
-    //req.ParseForm()
-    //fmt.Fprint(res, req.Form)
+    req.ParseForm()
+    fmt.Fprint(res, req.Form)
 
     req_req, err := http.NewRequest("POST", api_call, nil)
 	if err != nil {
