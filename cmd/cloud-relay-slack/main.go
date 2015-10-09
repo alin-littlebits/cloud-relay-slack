@@ -28,6 +28,14 @@ func hello(res http.ResponseWriter, req *http.Request) {
 
     client_req, client_err := http.NewRequest("POST", api_call, nil)
 
-    hc_resp, hc_err := hc.Do(client_req)
-    fmt.Fprint(res, hc_resp.Body)
+    if client_err == nil {
+
+	hc_resp, hc_err := hc.Do(client_req)
+
+	if hc_err != nil {
+		fmt.Fprint(res, hc_err)
+	} else {
+	   fmt.Fprint(res, hc_resp.Body)
+	}
+
 }
