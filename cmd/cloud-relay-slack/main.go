@@ -37,5 +37,5 @@ func hello(res http.ResponseWriter, req *http.Request) {
 	} else {
 	   fmt.Fprint(res, hc_resp.Body)
 	}
-
+	}
 }
