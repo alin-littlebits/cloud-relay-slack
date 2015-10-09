@@ -33,9 +33,9 @@ func hello(res http.ResponseWriter, req *http.Request) {
 	hc_resp, hc_err := hc.Do(client_req)
 
 	if hc_err != nil {
-		fmt.Fprint(res, "noerr")
+		fmt.Fprint(res, "err")
 	} else {
-	   fmt.Fprint(res, hc_resp.Body)
+	   fmt.Fprint(res, "err2")
 	}
 	}
 }
