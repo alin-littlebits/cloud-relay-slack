@@ -38,5 +38,8 @@ func hello(res http.ResponseWriter, req *http.Request) {
 		log.Fatal(client_err)
 	}
 
-	fmt.Fprintf(res, ioutil.ReadAll(client_req.Body))
+	req_res_body, req_err := ioutil.ReadAll(client_req.Body)
+	client_req.Body.Close()
+
+	fmt.Fprintf(res, req_res_body)
 }
