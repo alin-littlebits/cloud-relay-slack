@@ -41,5 +41,5 @@ func hello(res http.ResponseWriter, req *http.Request) {
 	req_res_body, req_err := ioutil.ReadAll(client_req.Body)
 	client_req.Body.Close()
 
-	fmt.Println(req_res_body)
+	fmt.Printf("%s", req_res_body)
 }
