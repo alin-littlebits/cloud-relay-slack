@@ -7,6 +7,8 @@ import (
 	//"encoding/json"
 )
 
+hc := http.Client{}
+client_req, client_err := http.NewRequest("POST", "https://api-http.littlebitscloud.cc/devices/243c200ccecb/output?access_token=97612f7c1ce1b4bd1e2c317bad9f1c4af67e6fb6267931c0", nil)
 
 func main() {
     http.HandleFunc("/", hello)
@@ -18,6 +20,8 @@ func main() {
 }
 
 func hello(res http.ResponseWriter, req *http.Request) {
-    req.ParseForm()
-    fmt.Fprint(res, req.Form) //"{\n\"text\": \"African or European?\"\n}")
+    //req.ParseForm()
+    //fmt.Fprint(res, req.Form)
+    hc_resp, hc_err := hc.Do(client_req)
+    fmt.Fprint(res, hc_resp.Body)
 }
