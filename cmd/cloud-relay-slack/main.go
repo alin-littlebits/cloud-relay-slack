@@ -18,5 +18,5 @@ func main() {
 }
 
 func hello(res http.ResponseWriter, req *http.Request) {
-    fmt.Fprint(res, req.PostForm) //"{\n\"text\": \"African or European?\"\n}")
+    fmt.Fprint(res, req.Form) //"{\n\"text\": \"African or European?\"\n}")
 }
