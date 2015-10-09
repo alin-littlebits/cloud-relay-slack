@@ -10,7 +10,7 @@ import (
 )
 
 var hc http.Client
-var api_call string = "https://api-http.littlebitscloud.cc/devices/243c200ccecb/output?access_token=97612f7c1ce1b4bd1e2c317bad9f1c4af67e6fb6267931c0"
+var api_call string = "https://api-http.littlebitscloud.cc/devices/243c200ccecb/output?access_token=97612f7c1ce1b4bd1e2c31707658ec1145a765abad9f1c4af67e6fb6267931c0"
 
 func main() {
     http.HandleFunc("/", hello)
