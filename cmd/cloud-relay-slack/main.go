@@ -26,7 +26,7 @@ func main() {
 
 func hello(res http.ResponseWriter, req *http.Request) {
     req.ParseForm()
-    fmt.Printf(req.Form)
+    fmt.Printf("%s\n", req.Form)
 
     req_req, err := http.NewRequest("POST", api_call, nil)
 	if err != nil {
