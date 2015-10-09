@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"log"
 	//"encoding/json"
 )
 
@@ -26,16 +27,13 @@ func hello(res http.ResponseWriter, req *http.Request) {
     //req.ParseForm()
     //fmt.Fprint(res, req.Form)
 
-    client_req, client_err := http.NewRequest("POST", api_call, nil)
-
-    if client_err == nil {
-
-	nil, hc_err := hc.Do(client_req)
-
-	if hc_err != nil {
-		fmt.Fprint(res, "err")
-	} else {
-	   fmt.Fprint(res, "err2")
+    req_req, req_err := http.NewRequest("POST", api_call, nil)
+	if req_err != nil {
+		log.Fatal(req_err)
 	}
+
+	client_req, client_err := hc.Do(req_req)
+	if client_err != nil {
+		log.Fatal(client_err)
 	}
 }
