@@ -18,5 +18,6 @@ func main() {
 }
 
 func hello(res http.ResponseWriter, req *http.Request) {
+    req.ParseForm()
     fmt.Fprint(res, req.Form) //"{\n\"text\": \"African or European?\"\n}")
 }
