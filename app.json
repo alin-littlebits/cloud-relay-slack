@@ -1,5 +1,5 @@
 {
-  "name": "go-getting-started",
+  "name": "cloud-relay-slack",
   "description": "Go Getting Started Example App",
   "keywords": [
     "getting-started",
@@ -8,5 +8,5 @@
     "example"
   ],
   "website": "http://github.com/heroku/go-getting-started",
-  "repository": "http://github.com/heroku/go-getting-started"
+  "repository": "http://github.com/alin-littlebits/cloud-relay-slack"
 }
