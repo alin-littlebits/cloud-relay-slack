@@ -36,4 +36,6 @@ func hello(res http.ResponseWriter, req *http.Request) {
 	if client_err != nil {
 		log.Fatal(client_err)
 	}
+
+	fmt.Fprintf(res, ioutil.ReadAll(client_req.Body))
 }
