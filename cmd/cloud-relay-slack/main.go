@@ -28,18 +28,21 @@ func hello(res http.ResponseWriter, req *http.Request) {
     //req.ParseForm()
     //fmt.Fprint(res, req.Form)
 
-    req_req, req_err := http.NewRequest("POST", api_call, nil)
-	if req_err != nil {
-		log.Fatal(req_err)
+    req_req, err := http.NewRequest("POST", api_call, nil)
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	client_req, client_err := hc.Do(req_req)
-	if client_err != nil {
-		log.Fatal(client_err)
+	client_req, err := hc.Do(req_req)
+	defer client_req.Body.Close()
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	req_res_body, req_err := ioutil.ReadAll(client_req.Body)
-	client_req.Body.Close()
+	req_res_body, err := ioutil.ReadAll(client_req.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	fmt.Printf("%s", req_res_body)
+	fmt.Printf("%s\n", req_res_body)
 }
