@@ -30,7 +30,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
 
     if client_err == nil {
 
-	hc_resp, hc_err := hc.Do(client_req)
+	nil, hc_err := hc.Do(client_req)
 
 	if hc_err != nil {
 		fmt.Fprint(res, "err")
