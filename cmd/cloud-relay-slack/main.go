@@ -16,7 +16,7 @@ var go_call string = "https://hooks.slack.com/services/T024BECFB/B0CCQP8US/DN5jF
 
 func main() {
     http.HandleFunc("/", hello)
-    http.HandleFun("/turd", chat)
+    http.HandleFunc("/turd", chat)
 
     hc = http.Client{}
 
