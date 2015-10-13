@@ -28,10 +28,11 @@ func main() {
 }
 
 func chat(res http.ResponseWriter, req *http.Request) {
-    req.ParseForm()
-    fmt.Printf("%s\n", req.Form)
+    //req.ParseForm()
+    //fmt.Printf("%s\n", req.Form)
 
     resp, err := http.PostForm(go_call, url.Values{"payload": {"{\"text\":\"\U0001F4A9\"}"}})
+    defer resp.Body.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
