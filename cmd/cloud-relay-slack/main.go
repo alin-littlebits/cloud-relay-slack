@@ -37,12 +37,12 @@ func chat(res http.ResponseWriter, req *http.Request) {
 		log.Fatal(err)
 	}
 
-	req_res_body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
+	//req_res_body, err := ioutil.ReadAll(resp.Body)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 
-	fmt.Printf("%s\n", req_res_body)
+	//fmt.Printf("%s\n", req_res_body)
 }
 
 func hello(res http.ResponseWriter, req *http.Request) {
