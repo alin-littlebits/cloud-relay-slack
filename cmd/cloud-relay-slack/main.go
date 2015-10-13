@@ -31,7 +31,7 @@ func chat(res http.ResponseWriter, req *http.Request) {
     req.ParseForm()
     fmt.Printf("%s\n", req.Form)
 
-    resp, err := http.PostForm(go_call, url.Values{"payload": {"{\"text\":\"\u1F4A9\"}"}})
+    resp, err := http.PostForm(go_call, url.Values{"payload": {"{\"text\":\"\U0001F4A9\"}"}})
 	if err != nil {
 		log.Fatal(err)
 	}
